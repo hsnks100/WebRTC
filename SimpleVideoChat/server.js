@@ -11,13 +11,18 @@ var wss = null, sslSrv = null;
  
 // use express static to deliver resources HTML, CSS, JS, etc)
 // from the public folder 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 app.use(function(req, res, next) {
   if(req.headers['x-forwarded-proto']==='http') {
     return res.redirect(['https://', req.get('Host'), req.url].join(''));
   }
   next();
+});
+
+
+app.listen(3000, function() {
+    console.log("3000");
 });
 
 // start server (listen on port 443 - SSL)

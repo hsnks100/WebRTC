@@ -7,7 +7,7 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
   || window.msSpeechRecognition || window.oSpeechRecognition;
 
 var config = {
-  wssHost: 'ws://localhost'
+  wssHost: 'wss://localhost:1234'
   // wssHost: 'wss://example.com/myWebSocket'
 };
 var localVideoElem = null, 
